@@ -1,0 +1,100 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/Images/random.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+}
+
+.text {
+    text-align: center;
+    color: black;
+}
+.fas {
+    color: black;
+}
+.button{
+    color: black;
+
+}
+.button--mimas::before {
+    content: '';
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(
+30deg
+);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+.button::before, .button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    opacity: .9;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #929292;
+    color: white;
+  }
+
+  .newmovie {
+    font-size: 19px;
+    text-align: center;
+    border: 1px solid black;
+    max-width: 95px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 24px;
+    margin-top: 30px;
+    padding: 6px;
+  }
+
+  .newmovie:hover{
+    background-color: #333;
+    box-shadow: 6px 2px 25px black;
+    color: white;
+
+  }
+
+  .pic {
+    border-radius: 10px;
+    box-shadow: 6px 2px 25px black;
+  }
+
+  .MovieName {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: snow;
+    margin-bottom: -5px;
+  }
+
+  .bgpic{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  

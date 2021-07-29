@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Movie Name Generator</title>
+</head> 
+
+<body>
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="https://movie-names-api.herokuapp.com/api/Movie-Names/all">Json Data</a>
+    <a href="sreeramaj53@gmail.com">Contact</a>
+    <a href="https://github.com/Zenomodiff/">About</a>
+  </div>
+  <div class="text">
+    <p class="MovieName" id="MovieName"></p>
+    <h1 id=Rating></h1>
+    <img class="pic" id="pic" width="225" height="350">
+  </div>
+
+  <label class="button">
+    <p class="newmovie" id="NewMovie">NEXT ►</p>
+  </label>
+  </div>
+  </div>
+  </div>
+
+  <script>
+    const MovieName = document.getElementById("MovieName");
+    const NewMovie = document.getElementById("NewMovie");
+    let realData = "";
+
+    const getNewMovieName = () => {
+      let rnum = Math.floor(Math.random() * 100);
+      console.log(realData)
+      rnum = 0;
+      console.log(`${realData[rnum].Link}`);
+      MovieName.innerText = `${realData[rnum].Movie_Name}`;
+      pic.src = `${realData[rnum].Link}`;
+      Rating.innerText = `${realData[rnum].Rating}`
+    };
+    const getMovieName = async () => {
+      const api = "https://movie-names-api.herokuapp.com/api/Movie-Names?number=1";
+      try {
+        let data = await fetch(api);
+        realData = await data.json();
+        getNewMovieName();
+
+      } catch (error) { }
+    };
+
+    NewMovie.addEventListener('click', getMovieName);
+    getMovieName();
+  </script>
+</body>
+
+</html>
